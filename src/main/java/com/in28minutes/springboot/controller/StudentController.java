@@ -30,12 +30,17 @@ public class StudentController {
     public List<Course> retrieveCoursesForStudent(@PathVariable String studentId) {
         return studentService.retrieveCourses(studentId);
     }
+    
+   
 
     @GetMapping("/students/{studentId}/courses/{courseId}")
     public Course retrieveDetailsForCourse(@PathVariable String studentId,
             @PathVariable String courseId) {
         return studentService.retrieveCourse(studentId, courseId);
     }
+    
+    
+    
 
     @PostMapping("/students/{studentId}/courses")
     public ResponseEntity<Void> registerStudentForCourse(
